@@ -1,0 +1,143 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto}
+body{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background: radial-gradient(circle at top, #ffd6e8, #fff);
+}
+.wrap{padding:24px;width:min(520px,92vw)}
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:28px 22px;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+h1{font-size:28px;line-height:1.2;margin-bottom:6px}
+.sub{color:#7a4a6a;margin-bottom:18px}
+.msg{
+  background:#fff6fb;
+  border:1px solid #ffd1ea;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:18px;
+  color:#4a2a3d;
+  line-height:1.7;
+}
+.btns{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  margin-top:10px;
+  position:relative;
+}
+.btn{
+  border:0;
+  padding:12px 16px;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:700;
+  transition:.2s;
+  min-width:120px;
+}
+.yes{background:#ff4d88;color:#fff}
+.yes:hover{transform:translateY(-2px)}
+.no{background:#f1f1f1}
+.hint{margin-top:14px;color:#7a4a6a;font-size:13px}
+
+.confetti{
+  position:absolute;
+  width:10px;height:14px;
+  top:-20px;
+  animation:fall 1.8s linear forwards;
+  border-radius:3px;
+  opacity:.95;
+}
+@keyframes fall{
+  to{ transform: translateY(520px) rotate(420deg); opacity:1; }
+}
+.hero-video{
+  display:flex;
+  justify-content:center;
+  margin-bottom: 12px;
+}
+
+.hero-video video{
+  width: 150px;       /* عدليها حسب الذوق */
+  max-width: 70%;
+  border-radius: 18px;
+  pointer-events: none; /* عشان ميدوسش عليه */
+  /* height: 150px; */
+}
+
+
+.btns{
+  position: relative;   /* مهم جدًا */
+  height: 80px;         /* مساحة للحركة */
+  justify-content: center;
+  align-items: center;
+}
+
+.yes{
+  position: relative;
+  z-index: 2;
+}
+
+.no{
+  position: absolute;
+  z-index: 3;
+}
+.no{
+  left: 70%;
+  top: 20px;
+}
+
+.btns{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  margin-top:10px;
+  position:relative;
+  height: 80px;
+}
+
+.yes{
+  position: relative;
+  z-index: 2;
+}
+
+.no{
+  position: absolute;
+  z-index: 3;
+  left: 70%;
+  top: 20px;
+  background:#f1f1f1;
+}
+@media (max-width: 576px){
+
+  .btns{
+    height: auto;              /* ❌ مفيش مساحة حركة */
+    gap: 12px;
+  }
+
+  .btn{
+    min-width: 130px;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .no{
+    position: static;          /* ✅ يرجع طبيعي */
+    transform: none !important;
+  }
+}
+
+@media (max-width: 576px){
+  .no:active{
+    transform: scale(0.95);
+  }
+}
