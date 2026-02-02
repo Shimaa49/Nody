@@ -59,3 +59,28 @@ function moveNo(){
 }
 
 noBtn.addEventListener("mouseenter", moveNo);
+
+const btns  = document.querySelector(".btns");
+
+function moveNo(){
+  const rect = btns.getBoundingClientRect();
+
+  const maxX = rect.width - noBtn.offsetWidth;
+  const maxY = rect.height - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top  = `${y}px`;
+}
+
+/* Desktop */
+noBtn.addEventListener("mouseenter", moveNo);
+
+/* Mobile */
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();   // يمنع الضغط الحقيقي
+  moveNo();
+});
